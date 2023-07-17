@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Music player</title>
+</head>
+<body>
+    <div class="player">
+        <p class="songcounter"></p>
+        <div class="image"><img src="" alt="music-image"></div>
+        <p class="songname"></p>
+        <p class="songauthor"></p>
+        <div class="controlsone">
+            <div class="slider">
+                <p class="current-time">00:00</p>
+                 <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                 <p class="total-duration">00:00</p>
+            </div>
+            <div class="slider">
+                <i class="icon-volume-off"></i>
+                 <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                 <i class="icon-volume-up"></i>
+            </div>
+        </div>
+        <div class="controlstwo">
+            <i class="icon-shuffle" onclick="randomTrack()" title="random"></i>
+            <i class="icon-to-start" onclick="song(-1)"></i>
+            <i class="icon-pause-circle-o playpause" onclick="play()"></i>
+            <i class="icon-to-end" onclick="song(1)"></i>
+            <i class="icon-loop" onclick="repeatTrack()" title="repeat"></i>
+        </div>
+    </div>
+    <div class="musiclist-left">
+        <p>Music list</p>
+        <div class="musicbox-left">
+
+        </div>
+    </div>
+    <div class="musiclist-right">
+        <p>Welcome to the description!</p>
+        <div class="musicbox-right">
+            <a href="https://www.youtube.com/channel/UC_Agz5kNf0wdVSvdhNnJF7A" target="_blank">»<p> Visit my YouTube channel </p>«</a>
+            <a href="mailto:krzysztof.swiniarski@interia.pl">»<p> Contact with me via e-mail </p>«</a>
+            <p> And enjoy using the player :></p>
+            <p>Krzysztof Świniarski &copy 2023</p>
+        </div>
+    </div>
+    <canvas class="visualizer"></canvas>
+    <script src="app.js" defer></script>
+</body>
+</html>
